@@ -19,7 +19,7 @@ function Nav () {
        </div>
    
    { /* derecha de la barra de navegacion  */}
-       <nav className="flex items-center gap-2">
+       <nav className="flex items-center gap-4">
          <div>
            <IoStatsChart className='text-2xl' />
            </div>

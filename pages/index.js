@@ -1,3 +1,5 @@
+"use client"; 
+
 import { currencyFormatter } from '@/lib/Utilidades';
 import ExpensasCategory from '@/components/ExpensasCategory';
 
@@ -11,37 +13,44 @@ const DUMMY_DATE = [
     id: 1,
     title: "Entretenimiento",
     color: '#000',
-    amount: 500,
+    total: 500,
   },
   {
     id: 2,
     title: "Alquiler",
     color: '#009',
-    amount: 200,
+    total: 200,
   },
   {
     id: 3,
     title: "Comida",
     color: '#000',
-    amount: 1200,
+    total: 1200,
   },
   {
     id: 4,
     title: "Telefono",
     color: '#000',
-    amount: 800,
+    total: 800,
   },
   {
     id: 5,
     title: "Internet",
     color: '#000',
-    amount: 1000,
+    total: 1000,
   },
 ]
 
 
 export default function Home() {
   return (
+    <>
+    {/* Modal */}
+    <div className='absolute top-0 left-0 w-full h-full'>
+      <div className='container mx-auto max-w-2xl h-[80vh] rounded-3xl bg-slate-800 py-6 px-4'>
+        <h3>Soy un modal!</h3>
+      </div>
+    </div>
     <main className="container max-w-2xl px-6 mx-auto">
   <section className="py-3">
     <small className="text-gray-400 text-md">Mi Balance </small>
@@ -62,7 +71,7 @@ export default function Home() {
      <ExpensasCategory
      color={expensa.color}
       title={expensa.title}
-      amount={expensa.amount}
+      total={expensa.total}
       />  
       );
     })}
@@ -72,21 +81,24 @@ export default function Home() {
 {/* sección de gráficos */}
 <section className='py-6'>
   <h3 className='text-2xl'>Estadísticas</h3>
-  <div>
-    <Doughnut data={{
-      labels: DUMMY_DATE.map(expensa => expensa.title),
+  <div className='w-1/2 mx-auto'>
+    <Doughnut 
+    data={{
+      labels: DUMMY_DATE.map((expensa)=> expensa.title),
       datasets: [
         {
           label: "Expensas",
-          data: DUMMY_DATE.map(expensa => expensa.amount),
-          backgroundColor: DUMMY_DATE.map(expensa => expensa.color),
+          data: DUMMY_DATE.map((expensa) => expensa.total),
+          backgroundColor: DUMMY_DATE.map((expensa) => expensa.color),
           bolderColor: ['#18181b'],
           borderWidth: 5, 
         },
       ],
-    }} />
+    }}
+     />
   </div>
 </section>
   </main>
+  </>
   );
 }

@@ -1,6 +1,6 @@
 import { currencyFormatter } from '@/lib/Utilidades';
 
-function ExpensasCategory  ({color, title, amount }) {
+function ExpensasCategory  ({color, title, total }) {
     return (
       <button>
     <div className='flex items-center justify-between px-4 py-4 bg-slate-700 rounded-3xl'>
@@ -11,7 +11,7 @@ function ExpensasCategory  ({color, title, amount }) {
        />
     <h4 className='capitalize '>{title}</h4>
     </div>
-    <p>{currencyFormatter(amount)}</p>
+    <p>{currencyFormatter(total)}</p>
   </div>
   </button>
   );
