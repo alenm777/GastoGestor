@@ -13,31 +13,31 @@ const DUMMY_DATE = [
   {
     id: 1,
     title: "Entretenimiento",
-    color: '#000',
+    color: '#060',
     total: 500,
   },
   {
     id: 2,
     title: "Alquiler",
-    color: '#009',
+    color: '#239',
     total: 200,
   },
   {
     id: 3,
     title: "Comida",
-    color: '#000',
+    color: '#310',
     total: 1200,
   },
   {
     id: 4,
     title: "Telefono",
-    color: '#000',
+    color: '#400',
     total: 800,
   },
   {
     id: 5,
     title: "Internet",
-    color: '#000',
+    color: '#640',
     total: 1000,
   },
 ]
@@ -83,7 +83,7 @@ const [modalIsOpen, setModalIsOpen] = useState(true);
   </section>
 
   {/* Expensas */}
-  <section className='py-3'>
+  <section className='py-6'>
   <h3 className='text-2xl'>Mis Expensas</h3>
   <div className='flex flex-col gap-4 mt-6'>
     {DUMMY_DATE.map(expensa => {
