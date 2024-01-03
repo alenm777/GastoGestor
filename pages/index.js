@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { currencyFormatter } from '@/lib/Utilidades';
 import ExpensasCategory from '@/components/ExpensasCategory';
-
+import Modal from "@/components/Modal"
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -44,28 +44,14 @@ const DUMMY_DATE = [
 
 
 export default function Home() {
-
 const [modalIsOpen, setModalIsOpen] = useState(true);
 
   return (
     <>
     {/* Modal */}
-    
-     <div style={{
-      transform: modalIsOpen ? "translateX(0%)" : "translateX(-200%)",
-     }}
-      className='absolute top-0 left-0 w-full h-full z-10 transition-all duration-500' >
-      <div className='container mx-auto max-w-2xl h-[80vh] rounded-3xl bg-slate-800 py-6 px-4'>
-        <button
-         onClick={() => {
-          setModalIsOpen(false);
-          }}
-           className='w-10 h-10 mb-4 font-bold rounded-full bg-slate-600'>
-            X
-            </button>
-        <h3>Soy un modal!</h3>
-      </div>
-    </div> 
+    <Modal show={modalIsOpen} onClose={setModalIsOpen }> 
+     <h3>Hola Mundo</h3> 
+     </Modal>
     
     <main className="container max-w-2xl px-6 mx-auto">
   <section className="py-3">
